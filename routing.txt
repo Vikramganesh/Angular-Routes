@@ -22,18 +22,18 @@ With help of routerlink directive, we can link to routes of our application righ
 
 There are two types of routing. 
 
-    -> client side routing
+        -> client side routing
 
-         example:  <a [routerLink]="['/student']">LearnMore...</a>
+               example:  <a [routerLink]="['/student']">LearnMore...</a>
 
 	-> server side routing
          
-         example: 
-         * import {Router} from '@angular/router'
-	    * constractor(private route:Router){}
-     In .ts file
+               example: 
+                      * import {Router} from '@angular/router'
+	              * constractor(private route:Router){}
+                  In .ts file
       
-         this.router.navigate(['/student']) 
+                      this.router.navigate(['/student']) 
 
 
 Redirect Route:
