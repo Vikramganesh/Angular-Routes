@@ -1,0 +1,76 @@
+Routing:
+========
+Routing is a mechanisam navigating between pages and displaying appropreate component/page on browser.
+
+Angular looks into the routes array match the path as per route request and load the component relavent to the requested route.
+
+Route Allow Us To:
+==================
+  --> Redirect a URL to another URL.
+  --> Run scripts when a page is activated or deactivated.
+  --> Lazy load parts of our Application.
+
+Router-Outlet:
+==============
+
+Router-outlet in Angular works as a placeholder which is used to load the different components dynamically based on the activated component or current route state. Navigation can be done using router-outlet directive and the activated component will take place inside the router-outlet to load its content.
+
+Router-Link:
+============
+
+With help of routerlink directive, we can link to routes of our application right from the html template.
+
+There are two types of routing. 
+
+    -> client side routing
+
+         example:  <a [routerLink]="['/student']">LearnMore...</a>
+
+	-> server side routing
+         
+         example: 
+         * import {Router} from '@angular/router'
+	    * constractor(private route:Router){}
+     In .ts file
+      
+         this.router.navigate(['/student']) 
+
+
+Redirect Route:
+===============
+
+When application starts defaulty route is work and loads the component. this can be used by redirectTo directive.
+
+    export const route: Routes=[
+       {path:' ', redirectTo: 'componetOne', pathMatch:'full'}
+       {path:'component-one', component:'studentComponent' }
+    ]
+
+WildCard Route:
+===============
+
+wildcard routes handle the invalid URL's.
+
+wildCard route has a path consiste of two astricks(**).If path is not matched in routers array,the route gose to this wildcard route.
+
+{
+   path: '**',
+   component: 'PageNotFound'
+}
+
+
+Child Route:
+============
+
+When some routes may only be accessible and viewed within other routes it may be appropriate to create them as child routes. 
+
+   {
+     
+     path: 'home',
+     
+     childern:[
+   
+          {path:'', component:HomeComponent},
+          {path:'about', component:AboutComponent},
+     ]
+   }
